@@ -1,0 +1,36 @@
+<mat-toolbar class="mat-primary">
+
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>PUBG Tour</span>
+    <span fxShow="true" fxHide.lt-md>
+      <button mat-button [routerLink]="['pubg/tournaments']">Dashboard</button>
+      <button mat-button [routerLink]="['pubg/favourites']">Favourite</button>
+
+    </span>
+    <span class="menu-spacer"></span>
+    <span *ngIf="!auth.isTokenExpired()" fxShow="true" fxHide.lt-md>
+      <button mat-button (click)="logout()">Logout</button>
+    </span>
+    <span *ngIf="auth.isTokenExpired()" fxShow="true" fxHide.lt-md>
+      <button mat-button [routerLink]="['/login']">Login</button>
+    </span>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['pubg/tournaments']">Dashboard</a>
+      <a mat-list-item [routerLink]="['pubg/favourites']">Favourite</a>
+      <a *ngIf="!auth.isTokenExpired()" mat-list-item (click)="logout()">Logout</a>
+      <a *ngIf="auth.isTokenExpired()" mat-list-item [routerLink]="['/login']">Login</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="parallax">
+    <router-outlet></router-outlet>
+  </div>

@@ -1,0 +1,18 @@
+<h4 class="header"><br>{{userName}}, here are the Tournaments<br></h4>
+
+<div class="flex-container">
+  <mat-card class="match-thumbnail" *ngFor="let tournament of tournaments">
+    <mat-card-header class="match-header">
+      <mat-card-title class="movieTitle">ID: <small>{{tournament?.id}}</small></mat-card-title>
+      <mat-card-subtitle>DATE: <small>{{tournament?.attributes?.createdAt}}</small> </mat-card-subtitle>
+    </mat-card-header>
+    <img class="match-image" mat-card-image
+      src="https://static.gamespot.com/uploads/scale_landscape/1585/15855271/3510831-3331131-pubg-review-thumb-nologo.jpg">
+
+    <mat-card-actions class="m-actions">
+      <button mat-raised-button color="primary" class="addButton mat-primary"
+        [routerLink]="['../matches', tournament.id ]">DETAILS</button>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

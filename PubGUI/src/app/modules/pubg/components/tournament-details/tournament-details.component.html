@@ -1,0 +1,19 @@
+<h4 class="header"><br>{{userName}}, here are the Matches<br></h4>
+<div class="flex-container">
+  <mat-card class="match-thumbnail" *ngFor="let mat of matches">
+    <mat-card-header class="match-header">
+      <mat-card-title class="movieTitle">ID: <small>{{mat?.id}}</small></mat-card-title>
+      <mat-card-subtitle>
+        <h4>DATE: <small>{{mat?.attributes?.createdAt}}</small></h4>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img class="match-image" mat-card-image
+      src="https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/11/05/Photos/Processed/pubg-k23G--621x414@LiveMint.jpg">
+
+    <mat-card-actions class="m-actions">
+      <button mat-raised-button color="primary" class="addButton mat-primary"
+        [routerLink]="['../../match',mat.id ]">DETAILS</button>
+
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,46 @@
+.match-header{
+    height: 100px;
+}
+.header{
+    text-align: center;
+    color:brown;
+    background-color: burlywood;
+    margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+}
+.match-thumbnail{
+    height:450px;
+    width: 320px;
+    margin: 10px;
+    background-color: beige;
+}
+.match-image{
+    height: 275px;
+
+}
+.match-overview{
+    height: 40px;
+}
+.match-overview::-webkit-scrollbar{
+    width: 2px;
+    background: gray;
+}
+.m-actions{
+   text-align: right;
+}
+.flex-container {
+    align-content: center;
+    opacity: 0.8;
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    overflow-y:auto;
+    overflow-x:auto;
+
+  }
+
+  button.mat-primary{
+    background: #000;
+    color: #fff
+}

@@ -1,0 +1,23 @@
+.parallax {
+    background-image: url("https://images8.alphacoders.com/818/818978.png");
+   
+    height: 100%;
+
+    background-attachment: fixed;
+   
+    background-position: center;
+   
+    background-repeat: no-repeat;
+   
+    background-size: cover;
+   
+   }
+
+   .mat-primary{
+       background: #000;
+       color: #fff
+   }
+
+   .menu-spacer{
+    flex: 1 1 auto;
+}

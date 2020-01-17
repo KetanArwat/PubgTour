@@ -1,0 +1,24 @@
+<form class="login-form" #loginForm="ngForm" [style.fontSize.px]="20">
+  <div class="login-block">
+    <div class="row">
+      <mat-form-field class="login-input-full-width">
+        <input matInput placeholder="User Id" [(ngModel)]="user.userId" name="userId" id="userId" required minlength="5"
+          #userId="ngModel" class="inputId">
+        <mat-error *ngIf="userId.invalid">User Id too short, minimum 5 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field class="login-input-full-width">
+        <input matInput placeholder="Password" type="password"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" [(ngModel)]="user.password"
+          name="password" id="password" required minlength="5" #password="ngModel" class="inputPass">
+        <mat-error *ngIf="password.invalid">Password invalid. It should contain at least 1 Symbol, 1 Number, 1 Lowercase
+          and 1 Uppercase</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row div-margin">
+      <button class="login-user mat-primary" type="submit" mat-raised-button (click)="loginUser()"
+        color="primary">Login</button>
+      <button class="register-button mat-primary" mat-raised-button [routerLink]="['/register']"
+        color="primary">Register</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<h4 class="header"><br>{{userName}}, here is your favourites list<br></h4>
+<div class="flex-container">
+  <mat-card class="match-thumbnail" *ngFor="let match of matches">
+    <mat-card-header class="match-header">
+      <mat-card-title class="movieTitle">TITLE: <small>{{match.titleId}}</small></mat-card-title>
+      <mat-card-subtitle>DATE: <small>{{match.createdAt}}</small> </mat-card-subtitle>
+    </mat-card-header>
+    <img class="match-image" mat-card-image
+      src="https://image.redbull.com/rbcom/052/2018-04-05/f8336755-0c26-4322-98e2-74eddced0024/0010/1/800/533/1/pubg-mobile-loot.jpg">
+    <mat-card-content *ngIf="!useWatchlistApi" class="movie-overview">
+      GAME MODE: <small>{{match.gameMode}}</small>
+      <br>
+      MAP NAME: <small>{{match.mapName}}</small>
+
+    </mat-card-content>
+
+    <mat-card-actions class="match-actions">
+      <button mat-raised-button color="primary" class="addButton" (click)="deleteFromWatchList(match)">Delete from
+        Watchlist</button>
+    </mat-card-actions>
+
+
+  </mat-card>
+</div>
